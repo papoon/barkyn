@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  api:
+    build: .
+    privileged: true
+    volumes: 
+      - ${VOLUME_BARKYN_API}:/var/www/html/:cached
+    environment: 
+      - ENV=${ENV}
+      - TZ=Europe/Lisbon
+    hostname: ${HOSTNAME_BARKYN_API}
+    cap_add: 
+      - SYS_ADMIN
+      - DAC_READ_SEARCH
+    ports: 
+      - "${PORT_BARKYN_API}:80"
+    depends_on: 
+      - db
+  db:
+    image: mariadb:10.6.0
+    restart: always
+    environment:
+      MARIADB_DATABASE: "${MYSQL_DATABASE}"
+      MARIADB_USER: "${MYSQL_USER}"
+      MARIADB_PASSWORD: "${MYSQL_PASSWORD}"
+      MARIADB_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+    ports: 
+      - "${MYSQL_PORT}:3306"
+    volumes:
+      - ${MYSQL_HOST}:/var/lib/mysql
+
