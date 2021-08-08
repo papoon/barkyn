@@ -9,7 +9,7 @@ final class AddTablesBarkyn extends AbstractMigration
     //migrated 0.1012s
     public function up(): void
     {
-        $this->execute("create table customer(
+        $this->execute("CREATE TABLE customer(
             id INT NOT NULL AUTO_INCREMENT,
             name VARCHAR(100) NOT NULL,
             email VARCHAR(50) NOT NULL,
@@ -18,10 +18,10 @@ final class AddTablesBarkyn extends AbstractMigration
             PRIMARY KEY ( id )
          );");
 
-        $this->execute("create table subscription(
+        $this->execute("CREATE TABLE subscription(
             id INT NOT NULL AUTO_INCREMENT,
-            baseprice decimal(6,2) NOT NULL,
-            totalprice decimal(6,2) NOT NULL,
+            baseprice DECIMAL(6,2) NOT NULL,
+            totalprice DECIMAL(6,2) NOT NULL,
             startdate DATE NOT NULL,
             enddate DATE,
             nextorderdate DATE NOT NULL,
@@ -30,24 +30,24 @@ final class AddTablesBarkyn extends AbstractMigration
             FOREIGN KEY (idcustomer) REFERENCES customer(id)
          );");
 
-        $this->execute("create table petlifestage(
+        $this->execute("CREATE TABLE petlifestage(
             id INT NOT NULL AUTO_INCREMENT,
             stage VARCHAR(50) NOT NULL,
             PRIMARY KEY ( id )
          );");
 
-        $this->execute("create table pet(
+        $this->execute("CREATE TABLE pet(
             id INT NOT NULL AUTO_INCREMENT,
-            name decimal(6,2) NOT NULL,
+            name VARCHAR(50) NOT NULL,
             gender ENUM('male','female') NOT NULL,
-            weight DATE,
-            idlifestage INT NOT NULL,
+            weight DECIMAL(6,2) NOT NULL,
+            idpetlifestage INT NOT NULL,
             PRIMARY KEY ( id ),
-            FOREIGN KEY (idlifestage) REFERENCES petlifestage(id)
+            FOREIGN KEY (idpetlifestage) REFERENCES petlifestage(id)
          );
          ");
 
-        $this->execute("create table subscriptionpet(
+        $this->execute("CREATE TABLE subscriptionpet(
             idsubscription INT NOT NULL,
             idpet INT NOT NULL,
             FOREIGN KEY (idsubscription) REFERENCES subscription(id),
@@ -55,7 +55,7 @@ final class AddTablesBarkyn extends AbstractMigration
          );");
 
 
-        $this->execute("create table product(
+        $this->execute("CREATE TABLE product(
             id INT NOT NULL AUTO_INCREMENT,
             name VARCHAR(100) NOT NULL,
             code VARCHAR(50) NOT NULL,
@@ -63,10 +63,10 @@ final class AddTablesBarkyn extends AbstractMigration
             PRIMARY KEY ( id )
          );");
 
-        $this->execute("create table subscriptionproduct(
+        $this->execute("CREATE TABLE subscriptionproduct(
             idsubscription INT NOT NULL,
             idproduct INT NOT NULL,
-            quantidade INT NOT NULL,
+            quantity INT NOT NULL,
             FOREIGN KEY (idsubscription) REFERENCES subscription(id),
             FOREIGN KEY (idproduct) REFERENCES product(id)
          );");
