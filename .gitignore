@@ -1,3 +1,4 @@
 .env
 mariadb/
 api/libs/vendor/
+.vscode
