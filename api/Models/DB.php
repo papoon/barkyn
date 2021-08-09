@@ -21,14 +21,24 @@ class DB
     {
     }
 
-    public static function getConnection()
+    /**
+     * singleton db connection
+     *
+     * @return Database
+     */
+    public static function getConnection(): Database
     {
         static $instance = false;
         if ($instance === false) {
+
+            $dbName     = getenv('MYSQL_DATABASE');
+            $dbUser     = getenv('MYSQL_USER');
+            $dbPassword = getenv('MYSQL_PASSWORD');
+
             $connection = new Connection(
-                'mysql:host=db;port=3306;dbname=barkyn',
-                'barkyn',
-                'barkyn'
+                'mysql:host=db;port=3306;dbname=' . $dbName,
+                $dbUser,
+                $dbPassword
             );
             $connection->options([
                 \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_OBJ,
