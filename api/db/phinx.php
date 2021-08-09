@@ -20,7 +20,7 @@ return
         ],
         'development' => [
             'adapter' => 'mysql',
-            'host' => '172.20.0.2',
+            'host' => 'db',
             'name' => 'barkyn',
             'user' => 'barkyn',
             'pass' => 'barkyn',
