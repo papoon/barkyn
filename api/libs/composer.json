@@ -7,8 +7,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Models\\": "../Models/",
-            "Services\\": "../Services/"
+            "Models\\": "api/Models/",
+            "Services\\": "api/Services/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "api/Tests"
         }
     }
 }

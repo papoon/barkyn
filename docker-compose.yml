@@ -9,6 +9,9 @@ services:
     environment: 
       - ENV=${ENV}
       - TZ=Europe/Lisbon
+      - DB=${MYSQL_DATABASE}
+      - DB_USER=${MYSQL_USER}
+      - DB_PASSWORD=${MYSQL_PASSWORD}
     hostname: ${HOSTNAME_BARKYN_API}
     cap_add: 
       - SYS_ADMIN
