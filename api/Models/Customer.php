@@ -24,6 +24,16 @@ class Customer
         return $this->db->from($this->table)->select()->all();
     }
 
+    /**
+     * get all customers
+     *
+     * @return array
+     */
+    public function get(int $idCustomer): array
+    {
+        return $this->db->from($this->table)->where('id')->is($idCustomer)->select()->all();
+    }
+
     public function update(int $idCustomer, array $fields): bool
     {
         return $this->db->update($this->table)->where('id')->is($idCustomer)->set($fields);

@@ -20,7 +20,7 @@ class Subscription
      */
     public function getSubscriptionCustomer(int $idCustomer): array
     {
-        return $this->db->from($this->table)->where('age')->is($idCustomer)->select()->all();
+        return $this->db->from($this->table)->where('idcustomer')->is($idCustomer)->select()->all();
     }
 
     /**

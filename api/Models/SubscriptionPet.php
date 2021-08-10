@@ -12,7 +12,7 @@ class SubscriptionPet
         $this->db = $db ?? DB::getConnection();
     }
 
-    public function deletePet(int $idPet, $idSubscription)
+    public function deletePet(int $idPet, $idSubscription): bool
     {
         return $this->db->from($this->table)->where('idpet')->is($idPet)->andWhere('idsubscription')->is($idSubscription)->delete();
     }

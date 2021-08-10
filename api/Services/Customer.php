@@ -24,6 +24,16 @@ class Customer
     }
 
     /**
+     * Get all Customers
+     *
+     * @return array
+     */
+    public function get(int $idCustomer): array
+    {
+        return $this->modelCustomer->get($idCustomer);
+    }
+
+    /**
      * Update Customer
      *
      * @param integer $idCustomer

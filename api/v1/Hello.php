@@ -2,8 +2,8 @@
 
 namespace v1;
 
-class Hello{
-
+class Hello
+{
 
     /**
      *
@@ -12,8 +12,8 @@ class Hello{
      * @return array
      * @throws RestException
      */
-    public function hi($text)
+    public function hi(string $text): string
     {
-        return ['Hello '.$text];
+        return 'Hello ' . $text;
     }
 }
