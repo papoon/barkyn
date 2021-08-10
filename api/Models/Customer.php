@@ -25,7 +25,7 @@ class Customer
     }
 
     /**
-     * get all customers
+     * get customer
      *
      * @return array
      */
@@ -34,6 +34,13 @@ class Customer
         return $this->db->from($this->table)->where('id')->is($idCustomer)->select()->all();
     }
 
+    /**
+     * update customer fields
+     *
+     * @param integer $idCustomer
+     * @param array $fields
+     * @return boolean
+     */
     public function update(int $idCustomer, array $fields): bool
     {
         return $this->db->update($this->table)->where('id')->is($idCustomer)->set($fields);

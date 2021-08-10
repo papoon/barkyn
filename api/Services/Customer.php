@@ -24,7 +24,7 @@ class Customer
     }
 
     /**
-     * Get all Customers
+     * Get customer
      *
      * @return array
      */
