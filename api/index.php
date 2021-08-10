@@ -1,7 +1,6 @@
 <?php
 
-$loader = require_once 'libs/vendor/autoload.php';
-
+$loader =  require_once __DIR__.'/libs/vendor/autoload.php';
 use Luracast\Restler\Defaults;
 use Luracast\Restler\Restler;
 
