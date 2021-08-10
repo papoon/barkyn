@@ -11,5 +11,7 @@ Defaults::$useUrlBasedVersioning = true;
 
 $r = new Restler();
 $r->setAPIVersion(1);
-$r->addAPIClass('Hello'); 
+$r->addAPIClass('Hello');
+$r->addAPIClass('Customer'); 
+$r->addAPIClass('Subscription'); 
 $r->handle(); 
