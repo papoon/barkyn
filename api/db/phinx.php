@@ -8,8 +8,8 @@ return
     ],
     'environments' => [
         'default_migration_table' => 'phinxlog',
-        'default_environment' => 'development',
-        'production' => [
+        'default_environment' => strtolower(getenv('ENV')),
+        'prod' => [
             'adapter' => 'mysql',
             'host' => '127.0.0.1',
             'name' => 'barkyn',
@@ -18,12 +18,12 @@ return
             'port' => '3306',
             'charset' => 'utf8',
         ],
-        'development' => [
+        'dev' => [
             'adapter' => 'mysql',
             'host' => 'db',
-            'name' => 'barkyn',
-            'user' => 'barkyn',
-            'pass' => 'barkyn',
+            'name' => getenv('DB'),
+            'user' => getenv('DB_USER'),
+            'pass' => getenv('DB_PASSWORD'),
             'port' => '3306',
             'charset' => 'utf8',
         ],
