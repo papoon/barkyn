@@ -30,7 +30,7 @@ class DB
     {
         static $instance = false;
         if ($instance === false) {
-            $env = getenv('env');
+            
             $dbName     = getenv('DB');
             $dbUser     = getenv('DB_USER');
             $dbPassword = getenv('DB_PASSWORD');

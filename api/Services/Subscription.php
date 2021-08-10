@@ -48,7 +48,6 @@ class Subscription
      */
     public function updateNextOrder(int $idSubscription, string $date): bool
     {
-
         return $this->modelSubscription->update($idSubscription, ['nextorderdate' => $date]);
     }
 }
