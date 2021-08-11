@@ -11,12 +11,11 @@
         beStrictAboutCoversAnnotation="false">
     <testsuites>
         <testsuite name="Customer">
-            <directory>./Customer/</directory>
+            <directory>Customer/</directory>
+            <directory>Subscrition/</directory>
+        </testsuite>
+        <testsuite name="Subscription">
+            <directory>Subscrition/</directory>
         </testsuite>
     </testsuites>
-    <filter>
-        <whitelist addUncoveredFilesFromWhitelist="true" processUncoveredFilesFromWhitelist="false">
-            <directory>../Services/</directory>
-        </whitelist>
-    </filter>
 </phpunit>
