@@ -18,6 +18,11 @@ docker run barkyn_api
 docker-compose up
 ```
 
+### Dependencies
+
+```bash
+composer install
+```
 ### Migrations
 
 ```bash
