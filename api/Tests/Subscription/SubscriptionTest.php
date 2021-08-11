@@ -62,7 +62,6 @@ final class SubscriptionTest extends TestCase
      */
     public function testUpdateNextOrderInvalidDate($date): void
     {
-        #$date           = '2021-08-10';
         $idCustomer     = 1;
         $idSubscription = 1;
         $update         = ['nextorderdate' => $date];
