@@ -3,3 +3,4 @@ mariadb/
 api/libs/vendor/
 .vscode
 api/Tests/.phpunit.result.cache
+api/Tests/Coverage/
